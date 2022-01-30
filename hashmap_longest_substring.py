@@ -8,7 +8,7 @@ class Solution:
 
         i = 0
         # try to extend the range [i, j]
-        for j in range(n):  #j 是自动驱动
+        for j in range(n):  #j 自动驱动j
             if s[j] in mp: 
                 i = max(mp[s[j]], i) #如果有重复的字母，i就直接skip到除了这个字母的下一个index
 
