@@ -16,3 +16,25 @@ class Solution:
             mp[s[j]] = j + 1  #给字母map 标记要跳的index
 
         return ans
+    
+    #method 2
+    class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        res = 0
+        word = ""
+        for c in s:
+            if c not in word:
+                word += c
+                print("if word: " + word)
+                if len(word) > res:
+                    res = len(word)
+                    print(res)
+            else:
+                print(word)  #abcf
+                word = word[word.find(c) + 1:] + c #fc
+                print(word.find(c)) #1
+                
+                
+        return res
+one =Solution();
+print(one.lengthOfLongestSubstring("abcfcde"))
